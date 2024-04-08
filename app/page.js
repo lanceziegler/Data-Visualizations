@@ -136,7 +136,7 @@ export default function Home() {
               visibleComponents.lineGraph ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <h1 className='text-3xl'>Number of Therapies vs Survival Rates</h1>
+            {/*<h1 className='text-3xl'>Number of Therapies vs Survival Rates</h1>*/}
             {visibleComponents.lineGraph && <LineGraph />}
           </div>
         </section>

@@ -28,12 +28,16 @@ function LineGraph() {
       y: {
         type: 'linear',
         display: true,
-        position: 'left',
+        position: 'right',
+        title: {
+          display: true,
+          text: 'Cumulative Number of FDA-Approved Targeted Therapies',
+        },
       },
       y1: {
         type: 'linear',
         display: true,
-        position: 'right',
+        position: 'left',
         grid: {
           drawOnChartArea: false,
         },
@@ -42,6 +46,15 @@ function LineGraph() {
             return value + '%';
           },
         },
+        title: {
+          display: true,
+          text: 'Percentages',
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        position: 'bottom',
       },
     },
   };
@@ -76,7 +89,7 @@ function LineGraph() {
     ],
   };
 
-  return <Line options={options} data={data} />;
+  return <Line options={options} data={data} className='chart' />;
 }
 
 export default LineGraph;
