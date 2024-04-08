@@ -18,6 +18,13 @@ export default function Home() {
   const [pressedButton, setPressedButton] = useState(null); // State to track which button is pressed
   const [pageLoaded, setPageLoaded] = useState(false); // State to track if the page is loaded
 
+  const labelsBarDNA = ['D1', 'D2', 'D3', 'D4', 'D5', 'D6'];
+  const labelsBarRNA = ['R1', 'R2', 'R3', 'R4', 'R5', 'R6'];
+  const dnaManual = [84.17, 40.25, 60.6, 35.48, 58.49, 60.98];
+  const dnaPure = [26.82, 20.35, 28.19, 17.16, 22.14, 23.42];
+  const rnaManual = [26.82, 46.88, 71.26, 133.66, 43.94, 260.37];
+  const rnaPure = [75.01, 96.2, 81.91, 224.83, 79.63, 562.71];
+
   const label = [
     ['Overall DNA Gene Coverage'],
     ['Overall AQ20 Mean Read Length for DNA'],
@@ -279,19 +286,34 @@ export default function Home() {
             <IconChartCandle /> {label[9]}
           </button>
           <button
-            onClick={() => toggleVisibility('barGraph')}
-            onMouseDown={() => handlePress('barGraph')} // Handle mouse down event
+            onClick={() => toggleVisibility('barGraph1')}
+            onMouseDown={() => handlePress('barGraph1')} // Handle mouse down event
             onMouseUp={handleRelease} // Handle mouse up event
             onMouseLeave={handleRelease} // Handle mouse leave event
-            onTouchStart={() => handlePress('barGraph')} // Handle touch start event
+            onTouchStart={() => handlePress('barGraph1')} // Handle touch start event
             onTouchEnd={handleRelease} // Handle touch end event
             className={`flex gap-4 transform transition-all hover:scale-105 hover:text-red-700 ${
-              pressedButton === 'barGraph'
+              pressedButton === 'barGraph1'
                 ? 'scale-95 text-red-600'
                 : 'scale-100'
             }`}
           >
-            <IconChartBar /> Bar Chart
+            <IconChartBar /> DNA Comparisons
+          </button>
+          <button
+            onClick={() => toggleVisibility('barGraph2')}
+            onMouseDown={() => handlePress('barGraph2')} // Handle mouse down event
+            onMouseUp={handleRelease} // Handle mouse up event
+            onMouseLeave={handleRelease} // Handle mouse leave event
+            onTouchStart={() => handlePress('barGraph2')} // Handle touch start event
+            onTouchEnd={handleRelease} // Handle touch end event
+            className={`flex gap-4 transform transition-all hover:scale-105 hover:text-red-700 ${
+              pressedButton === 'barGraph2'
+                ? 'scale-95 text-red-600'
+                : 'scale-100'
+            }`}
+          >
+            <IconChartBar /> RNA Comparisons
           </button>
         </section>
 
@@ -299,7 +321,8 @@ export default function Home() {
           {/* Render components based on visibility state */}
           {visibleComponent === 'placeholder' && <Placeholder />}
           {visibleComponent === 'lineGraph' && <LineGraph />}
-          {visibleComponent === 'barGraph' && <BarGraph />}
+          {visibleComponent === 'barGraph1' && <BarGraph labels={labelsBarDNA} dataManual={dnaManual} dataPure={dnaPure} title={'DNA Yield (ng/uL)'}/>}
+          {visibleComponent === 'barGraph2' && <BarGraph labels={labelsBarDNA} dataManual={rnaManual} dataPure={rnaPure} title={'RNA Yield (ng/uL)'}/>}
           {visibleComponent === 'boxPlot' && (
             <Boxplot
               label={label[0]}

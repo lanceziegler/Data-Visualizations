@@ -47,7 +47,7 @@ function LineGraph() {
           display: true,
           text: 'Cumulative Number of FDA-Approved Targeted Therapies',
           font: {
-            size: 21,
+            size: 20,
           },
         },
         ticks: {
@@ -85,7 +85,8 @@ function LineGraph() {
         position: 'top',
         labels: {
           font: {
-            size: 16,
+            size: 15,
+            padding: 5,
           },
         },
         layout: {

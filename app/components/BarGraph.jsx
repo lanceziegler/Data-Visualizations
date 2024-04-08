@@ -1,19 +1,26 @@
-'use client'
+'use client';
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto'; // Import chart.js
 
-const BarGraph = () => {
+const BarGraph = ({ labels, dataManual, dataPure, title }) => {
   const chartRef = useRef(); // Reference to canvas element
 
   useEffect(() => {
     // Data for the chart
     const data = {
-      labels: ['January', 'February', 'March', 'April', 'May'],
+      labels: labels,
       datasets: [
         {
-          label: 'Sample Data',
-          data: [12, 19, 3, 5, 2], // Sample data values
-          backgroundColor: 'rgba(255, 99, 132, 0.2)', // Bar color
+          label: 'Manual Extractions',
+          data: dataManual, // Sample data values
+          backgroundColor: 'rgba(255,0,0,0.5)', // Bar color
+          borderColor: 'rgba(255, 99, 132, 1)', // Border color
+          borderWidth: 1,
+        },
+        {
+          label: 'Purification System',
+          data: dataPure, // Sample data values
+          backgroundColor: 'rgba(0,0,255,0.5)', // Bar color
           borderColor: 'rgba(255, 99, 132, 1)', // Border color
           borderWidth: 1,
         },
@@ -28,6 +35,29 @@ const BarGraph = () => {
         scales: {
           y: {
             beginAtZero: true, // Start Y axis at 0
+          },
+          x: {
+            title: {
+              display: true,
+              text: title,
+              font: {
+                size: 21,
+              },
+            },
+            ticks: {
+              font: {
+                size: 16,
+              },
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                size: 16, // Set legend font size
+              },
+            },
           },
         },
       },
