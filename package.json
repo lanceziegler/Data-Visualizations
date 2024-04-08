@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sgratzl/chartjs-chart-boxplot": "^4.3.1",
     "@tabler/icons-react": "^3.1.0",
     "chart.js": "^4.4.2",
     "next": "14.1.4",
@@ -17,6 +18,8 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/node": "20.12.5",
+    "@types/react": "18.2.74",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",

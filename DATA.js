@@ -61,3 +61,36 @@ export const lineGraphData = {
     },
   ],
 };
+
+export const boxplotData = {
+  labels: ['Category 1', 'Category 2'],
+  datasets: [
+    {
+      label: 'Box Plot',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      borderColor: 'rgb(255, 99, 132)',
+      borderWidth: 1,
+      outlierColor: '#999999',
+      padding: 10,
+      itemRadius: 0,
+      data: [
+        {
+          min: 10,
+          q1: 20,
+          median: 25,
+          q3: 30,
+          max: 40,
+          outliers: [5, 45],
+        },
+        {
+          min: 15,
+          q1: 25,
+          median: 30,
+          q3: 35,
+          max: 50,
+          outliers: [10, 55],
+        },
+      ],
+    },
+  ],
+};
