@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.1.0",
     "chart.js": "^4.4.2",
     "next": "14.1.4",
     "react": "^18",
