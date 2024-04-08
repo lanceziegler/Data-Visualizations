@@ -321,8 +321,22 @@ export default function Home() {
           {/* Render components based on visibility state */}
           {visibleComponent === 'placeholder' && <Placeholder />}
           {visibleComponent === 'lineGraph' && <LineGraph />}
-          {visibleComponent === 'barGraph1' && <BarGraph labels={labelsBarDNA} dataManual={dnaManual} dataPure={dnaPure} title={'DNA Yield (ng/uL)'}/>}
-          {visibleComponent === 'barGraph2' && <BarGraph labels={labelsBarDNA} dataManual={rnaManual} dataPure={rnaPure} title={'RNA Yield (ng/uL)'}/>}
+          {visibleComponent === 'barGraph1' && (
+            <BarGraph
+              labels={labelsBarDNA}
+              dataManual={dnaManual}
+              dataPure={dnaPure}
+              title={'DNA Yield (ng/uL)'}
+            />
+          )}
+          {visibleComponent === 'barGraph2' && (
+            <BarGraph
+              labels={labelsBarDNA}
+              dataManual={rnaManual}
+              dataPure={rnaPure}
+              title={'RNA Yield (ng/uL)'}
+            />
+          )}
           {visibleComponent === 'boxPlot' && (
             <Boxplot
               label={label[0]}

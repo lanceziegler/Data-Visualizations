@@ -8,7 +8,7 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
   const chartInstanceRef = useRef(null);
   const boxplotData = {
     // define label tree
-    labels: label,
+    labels: [label],
     datasets: [
       {
         label: 'PGM',
@@ -16,9 +16,10 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
         borderColor: 'red',
         borderWidth: 1,
         outlierColor: '#000000',
-        padding: 10,
+        padding: 30,
         itemRadius: 4,
         data: [data1],
+        maxBarThickness: 220,
       },
       {
         label: 'GNXS',
@@ -26,9 +27,10 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
         borderColor: 'blue',
         borderWidth: 1,
         outlierColor: 'black',
-        padding: 10,
+        padding: 30,
         itemRadius: 4,
         data: [data2],
+        maxBarThickness: 220,
       },
     ],
   };
@@ -49,23 +51,33 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
           scales: {
             y: {
               ticks: {
-                fontSize: 40, // Change the font size here
+                font: {
+                  size: 17,
+                },
               },
               min: min, // Set the minimum value of the y-axis
               max: max,
             },
-
             x: {
               // Add x-axis options
               ticks: {
-                fontSize: 30, // Change the font size of x-axis ticks
+                font: {
+                  size: 20,
+                },
               },
             },
           },
           plugins: {
             boxplot: {
               median: {
-                width: 2, // Adjust the width of the median line
+                width: 20, // Adjust the width of the median line
+              },
+            },
+            legend: {
+              labels: {
+                font: {
+                  size: 20,
+                },
               },
             },
           },
