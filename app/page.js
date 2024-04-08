@@ -4,7 +4,7 @@ import { IconChartLine } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import LineGraph from './components/LineGraph';
-import Placeholder from './components/placeholder';
+import Placeholder from './components/Placeholder';
 
 export default function Home() {
   const [visibleComponents, setVisibleComponents] = useState({
