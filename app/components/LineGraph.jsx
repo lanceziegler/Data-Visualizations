@@ -25,6 +25,12 @@ ChartJS.register(
 function LineGraph() {
   const options = {
     scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Year of Diagnosis',
+        },
+      },
       y: {
         type: 'linear',
         display: true,
@@ -48,13 +54,13 @@ function LineGraph() {
         },
         title: {
           display: true,
-          text: 'Relative Survival (%)',
+          text: 'Relative Survival Rate (%)',
         },
       },
     },
     plugins: {
       legend: {
-        position: 'bottom',
+        position: 'top',
       },
     },
   };
