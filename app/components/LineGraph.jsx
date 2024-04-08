@@ -29,6 +29,9 @@ function LineGraph() {
         title: {
           display: true,
           text: 'Year of Diagnosis',
+          font: {
+            size: 18,
+          },
         },
       },
       y: {
@@ -38,6 +41,9 @@ function LineGraph() {
         title: {
           display: true,
           text: 'Cumulative Number of FDA-Approved Targeted Therapies',
+          font: {
+            size: 18,
+          },
         },
       },
       y1: {
@@ -55,6 +61,9 @@ function LineGraph() {
         title: {
           display: true,
           text: 'Relative Survival Rate (%)',
+          font: {
+            size: 18,
+          },
         },
       },
     },
