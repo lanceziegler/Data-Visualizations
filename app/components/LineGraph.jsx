@@ -48,7 +48,7 @@ function LineGraph() {
         },
         title: {
           display: true,
-          text: 'Percentages',
+          text: 'Relative Survival (%)',
         },
       },
     },
