@@ -39,6 +39,9 @@ export default function Home() {
     'RNA Samples',
   ];
 
+  const boxLabelA = ['PGM', 'Manual Extracts'];
+  const boxLabelB = ['GNXS', 'GNXP'];
+
   const label = [
     ['Coverage'],
     ['AQ20 Mean Read Length'],
@@ -375,6 +378,8 @@ export default function Home() {
               labelX={labelX[0]}
               data1={data1[0]}
               data2={data2[0]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
               min={0}
               max={8000}
             />
@@ -385,6 +390,8 @@ export default function Home() {
               labelX={labelX[1]}
               data1={data1[1]}
               data2={data2[1]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
               min={80}
               max={105}
             />
@@ -395,6 +402,8 @@ export default function Home() {
               labelX={labelX[2]}
               data1={data1[2]}
               data2={data2[2]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
               min={0}
               max={140000}
             />
@@ -405,6 +414,8 @@ export default function Home() {
               labelX={labelX[3]}
               data1={data1[3]}
               data2={data2[3]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
             />
           )}
           {visibleComponent === 'boxPlot5' && (
@@ -413,6 +424,8 @@ export default function Home() {
               labelX={labelX[4]}
               data1={data1[4]}
               data2={data2[4]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
               min={500}
               max={3000}
             />
@@ -423,6 +436,8 @@ export default function Home() {
               labelX={labelX[5]}
               data1={data1[5]}
               data2={data2[5]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
             />
           )}
           {visibleComponent === 'boxPlot7' && (
@@ -431,6 +446,8 @@ export default function Home() {
               labelX={labelX[6]}
               data1={data1[6]}
               data2={data2[6]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
             />
           )}
           {visibleComponent === 'boxPlot8' && (
@@ -439,6 +456,8 @@ export default function Home() {
               labelX={labelX[7]}
               data1={data1[7]}
               data2={data2[7]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
               min={1600}
             />
           )}
@@ -448,6 +467,8 @@ export default function Home() {
               labelX={labelX[8]}
               data1={data1[8]}
               data2={data2[8]}
+              boxLabelA={boxLabelA[1]}
+              boxLabelB={boxLabelB[1]}
               min={1}
             />
           )}
@@ -457,6 +478,8 @@ export default function Home() {
               labelX={labelX[9]}
               data1={data1[9]}
               data2={data2[9]}
+              boxLabelA={boxLabelA[1]}
+              boxLabelB={boxLabelB[1]}
               min={0.9}
             />
           )}

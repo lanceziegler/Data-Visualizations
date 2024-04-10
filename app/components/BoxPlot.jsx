@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { BoxPlotChart } from '@sgratzl/chartjs-chart-boxplot';
 
-const BoxPlot = ({ label, labelX, data1, data2, min, max }) => {
+const BoxPlot = ({ label, labelX, data1, data2, min, max, boxLabelA, boxLabelB }) => {
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null);
   const boxplotData = {
@@ -11,7 +11,7 @@ const BoxPlot = ({ label, labelX, data1, data2, min, max }) => {
     labels: [labelX],
     datasets: [
       {
-        label: 'PGM',
+        label: boxLabelA,
         backgroundColor: '#526875',
         borderColor: 'red',
         borderWidth: 1,
@@ -26,7 +26,7 @@ const BoxPlot = ({ label, labelX, data1, data2, min, max }) => {
         maxBarThickness: 120,
       },
       {
-        label: 'GNXS',
+        label: boxLabelB,
         backgroundColor: '#A893F5',
         borderColor: 'blue',
         borderWidth: 1,
