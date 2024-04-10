@@ -3,34 +3,34 @@
 import React, { useEffect, useRef } from 'react';
 import { BoxPlotChart } from '@sgratzl/chartjs-chart-boxplot';
 
-const BoxPlot = ({ label, data1, data2, min, max }) => {
+const BoxPlot = ({ label, labelX, data1, data2, min, max }) => {
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null);
   const boxplotData = {
     // define label tree
-    labels: [label],
+    labels: [labelX],
     datasets: [
       {
         label: 'PGM',
-        backgroundColor: 'rgba(255,0,0,0.5)',
+        backgroundColor: '#526875',
         borderColor: 'red',
         borderWidth: 1,
-        outlierColor: '#000000',
+        outlierColor: 'rgba(0, 0, 0, 1)',
         padding: 30,
         itemRadius: 4,
         data: [data1],
-        maxBarThickness: 220,
+        maxBarThickness: 120,
       },
       {
         label: 'GNXS',
-        backgroundColor: 'rgba(0,0,255,0.5)',
+        backgroundColor: '#A893F5',
         borderColor: 'blue',
         borderWidth: 1,
-        outlierColor: 'black',
+        outlierColor: 'rgba(0, 0, 0, 1)',
         padding: 30,
         itemRadius: 4,
         data: [data2],
-        maxBarThickness: 220,
+        maxBarThickness: 120,
       },
     ],
   };
@@ -55,11 +55,19 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
                   size: 17,
                 },
               },
+              title: {
+                display: true,
+                text: label,
+                font: {
+                  size: 21,
+                },
+              },
               min: min, // Set the minimum value of the y-axis
               max: max,
             },
             x: {
               // Add x-axis options
+
               ticks: {
                 font: {
                   size: 20,
@@ -70,10 +78,11 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
           plugins: {
             boxplot: {
               median: {
-                width: 20, // Adjust the width of the median line
+                width: 30, // Adjust the width of the median line
               },
             },
             legend: {
+              align: 'center',
               labels: {
                 font: {
                   size: 20,
@@ -146,8 +155,8 @@ const BoxPlot = ({ label, data1, data2, min, max }) => {
   }, []);
 
   return (
-    <div>
-      <canvas ref={canvasRef} />
+    <div className='flex content-center justify-center'>
+      <canvas ref={canvasRef} style={{ maxWidth: 600 }} />
     </div>
   );
 };

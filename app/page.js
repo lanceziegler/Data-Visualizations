@@ -25,61 +25,76 @@ export default function Home() {
   const rnaManual = [26.82, 46.88, 71.26, 133.66, 43.94, 260.37];
   const rnaPure = [75.01, 96.2, 81.91, 224.83, 79.63, 562.71];
 
+  const labelX = [
+    'Overall DNA Gene Coverage',
+    'Overall AQ20 Mean Read Length for DNA',
+    'Overall Total Mapped Reads for RNA',
+    'KRAS SNV',
+    'BRAF SNV',
+    'EGFR exon 20 Insertion',
+    'EGFR exon 19 Deletion',
+    'ERBB2 SNV',
+    'DNA Samples',
+    'RNA Samples',
+  ];
+
   const label = [
-    ['Overall DNA Gene Coverage'],
-    ['Overall AQ20 Mean Read Length for DNA'],
-    ['Overall Total Mapped Reads for RNA'],
-    ['KRAS Gene Coverage'],
-    ['BRAF Gene Coverage'],
-    ['EGFR insertion Gene Coverage'],
-    ['EGFR Deletion Gene Coverage'],
-    ['ERBB2 Gene Coverage'],
-    ['260/280 for DNA'],
-    ['260/280 for RNA'],
+    ['Coverage'],
+    ['AQ20 Mean Read Length'],
+    ['Total Mapped Reads'],
+    ['Gene Coverage'],
+    ['Gene Coverage'],
+    ['Gene Coverage'],
+    ['Gene Coverage'],
+    ['Gene Coverage'],
+    ['A260/A280 Ratio'],
+    ['A260/A280 Ratio'],
   ];
 
   const data1 = [
     [
-      1966, 1368, 1969, 1055, 1906, 1354, 1933, 1230, 1766, 895, 1484, 748,
-      1929, 1129, 1796, 1004, 1993, 1991, 1990, 1696,
+      1966, 1368, 1969, 1055, 867, 653, 1906, 1354, 1933, 1230, 780, 621, 1766,
+      895, 1484, 748, 978, 788, 1929, 1129, 1796, 1004, 1212, 1271, 1993, 1991,
+      1990, 1696, 1995, 1992,
     ],
     [
       98, 94, 99, 94, 98, 94, 98, 94, 101, 97, 101, 96, 99, 95, 99, 95, 98, 94,
-      98, 94, 99, 94, 98, 94,
+      98, 94, 99, 94, 98, 94, 93, 93, 94, 94, 100, 100, 96, 95, 91, 95, 97, 96,
     ],
     [
       7067, 7939, 20029, 19263, 30493, 34957, 17140, 18379, 8683, 11850, 24150,
       19481, 26286, 25741, 12482, 17566, 21625, 26972, 30459, 34817, 50515,
-      45335, 23713, 2031,
+      45335, 23713, 2031, 15549, 11797, 11019, 16895, 20802, 13180,
     ],
-    [1966, 1368, 1969, 1055],
-    [1906, 1354, 1933, 1230],
-    [1766, 895, 1484, 748],
-    [1929, 1129, 1796, 1004],
-    [1993, 1991, 1990, 1696],
+    [1966, 1368, 1969, 1055, 867, 653],
+    [1906, 1354, 1933, 1230, 780, 621],
+    [1766, 895, 1484, 748, 978, 788],
+    [1929, 1129, 1796, 1004, 1212, 1271],
+    [1993, 1991, 1990, 1696, 1995, 1992],
     [1.18, 1.23, 1.17, 1.39, 1.14, 1.65],
     [0.96, 1.02, 1.11, 1.17, 0.97, 1.51],
   ];
 
   const data2 = [
     [
-      4224, 3811, 5999, 6717, 2136, 2228, 2675, 2781, 3477, 2805, 5101, 3674,
-      3221, 7957, 4677, 4240, 2707, 2323, 3279, 2209,
+      4224, 3811, 5999, 6717, 1704, 1616, 2136, 2228, 2675, 2781, 1748, 1302,
+      3477, 2805, 5101, 3674, 842, 3576, 3221, 7957, 4677, 4240, 5975, 3221,
+      2707, 2323, 3279, 2209, 4572, 3340,
     ],
     [
       93, 92, 93, 91, 92, 90, 93, 90, 94, 95, 94, 94, 90, 89, 92, 91, 94, 92,
-      94, 94, 93, 91, 91, 89,
+      94, 94, 93, 91, 91, 89, 86, 85, 90, 72, 89, 88, 85, 85, 91, 85, 89, 86,
     ],
     [
       46522, 56722, 69017, 70174, 101312, 86693, 102446, 126783, 56732, 56506,
       53261, 58085, 98539, 95338, 114890, 81616, 45275, 47579, 43923, 46775,
-      88261, 81835, 67651, 88613,
+      88261, 81835, 67651, 88613, 7070, 5012, 3689, 6724, 17879, 22490,
     ],
-    [4224, 3811, 5999, 6717],
-    [2136, 2228, 2675, 2781],
-    [3477, 2805, 5101, 3674],
-    [3221, 7957, 4677, 4240],
-    [2707, 2323, 3279, 2209],
+    [4224, 3811, 5999, 6717, 1704, 1616],
+    [2136, 2228, 2675, 2781, 1748, 1302],
+    [3477, 2805, 5101, 3674, 842, 3576],
+    [3221, 7957, 4677, 4240, 5975, 3221],
+    [2707, 2323, 3279, 2209, 4572, 3340],
     [1.23, 1.17, 1.26, 1.09, 1.19, 1.16],
     [1.18, 1.23, 1.17, 1.39, 1.14, 1.65],
   ];
@@ -148,7 +163,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[0]}
+            <IconChartCandle /> {labelX[0]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot2')}
@@ -163,7 +178,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[1]}
+            <IconChartCandle /> {labelX[1]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot3')}
@@ -178,7 +193,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[2]}
+            <IconChartCandle /> {labelX[2]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot4')}
@@ -193,7 +208,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[3]}
+            <IconChartCandle /> {labelX[3]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot5')}
@@ -208,7 +223,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[4]}
+            <IconChartCandle /> {labelX[4]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot6')}
@@ -223,7 +238,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[5]}
+            <IconChartCandle /> {labelX[5]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot7')}
@@ -238,7 +253,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[6]}
+            <IconChartCandle /> {labelX[6]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot8')}
@@ -253,7 +268,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[7]}
+            <IconChartCandle /> {labelX[7]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot9')}
@@ -268,7 +283,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[8]}
+            <IconChartCandle /> {labelX[8]}
           </button>
           <button
             onClick={() => toggleVisibility('boxPlot10')}
@@ -283,7 +298,7 @@ export default function Home() {
                 : 'scale-100'
             }`}
           >
-            <IconChartCandle /> {label[9]}
+            <IconChartCandle /> {labelX[9]}
           </button>
           <button
             onClick={() => toggleVisibility('barGraph1')}
@@ -331,7 +346,7 @@ export default function Home() {
           )}
           {visibleComponent === 'barGraph2' && (
             <BarGraph
-              labels={labelsBarDNA}
+              labels={labelsBarRNA}
               dataManual={rnaManual}
               dataPure={rnaPure}
               title={'RNA Yield (ng/uL)'}
@@ -340,6 +355,7 @@ export default function Home() {
           {visibleComponent === 'boxPlot' && (
             <Boxplot
               label={label[0]}
+              labelX={labelX[0]}
               data1={data1[0]}
               data2={data2[0]}
               min={0}
@@ -349,15 +365,17 @@ export default function Home() {
           {visibleComponent === 'boxPlot2' && (
             <Boxplot
               label={label[1]}
+              labelX={labelX[1]}
               data1={data1[1]}
               data2={data2[1]}
-              min={85}
+              min={80}
               max={105}
             />
           )}
           {visibleComponent === 'boxPlot3' && (
             <Boxplot
               label={label[2]}
+              labelX={labelX[2]}
               data1={data1[2]}
               data2={data2[2]}
               min={0}
@@ -365,26 +383,43 @@ export default function Home() {
             />
           )}
           {visibleComponent === 'boxPlot4' && (
-            <Boxplot label={label[3]} data1={data1[3]} data2={data2[3]} />
+            <Boxplot
+              label={label[3]}
+              labelX={labelX[3]}
+              data1={data1[3]}
+              data2={data2[3]}
+            />
           )}
           {visibleComponent === 'boxPlot5' && (
             <Boxplot
               label={label[4]}
+              labelX={labelX[4]}
               data1={data1[4]}
               data2={data2[4]}
-              min={1000}
+              min={500}
               max={3000}
             />
           )}
           {visibleComponent === 'boxPlot6' && (
-            <Boxplot label={label[5]} data1={data1[5]} data2={data2[5]} />
+            <Boxplot
+              label={label[5]}
+              labelX={labelX[5]}
+              data1={data1[5]}
+              data2={data2[5]}
+            />
           )}
           {visibleComponent === 'boxPlot7' && (
-            <Boxplot label={label[6]} data1={data1[6]} data2={data2[6]} />
+            <Boxplot
+              label={label[6]}
+              labelX={labelX[6]}
+              data1={data1[6]}
+              data2={data2[6]}
+            />
           )}
           {visibleComponent === 'boxPlot8' && (
             <Boxplot
               label={label[7]}
+              labelX={labelX[7]}
               data1={data1[7]}
               data2={data2[7]}
               min={1600}
@@ -393,6 +428,7 @@ export default function Home() {
           {visibleComponent === 'boxPlot9' && (
             <Boxplot
               label={label[8]}
+              labelX={labelX[8]}
               data1={data1[8]}
               data2={data2[8]}
               min={1}
@@ -401,6 +437,7 @@ export default function Home() {
           {visibleComponent === 'boxPlot10' && (
             <Boxplot
               label={label[9]}
+              labelX={labelX[9]}
               data1={data1[9]}
               data2={data2[9]}
               min={0.9}

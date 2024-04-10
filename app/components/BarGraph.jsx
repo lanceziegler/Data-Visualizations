@@ -13,15 +13,15 @@ const BarGraph = ({ labels, dataManual, dataPure, title }) => {
         {
           label: 'Manual Extractions',
           data: dataManual, // Sample data values
-          backgroundColor: 'rgba(255,0,0,0.5)', // Bar color
-          borderColor: 'rgba(255, 99, 132, 1)', // Border color
+          backgroundColor: '#526875', // Bar color
+          borderColor: '#526875', // Border color
           borderWidth: 1,
         },
         {
           label: 'Purification System',
           data: dataPure, // Sample data values
-          backgroundColor: 'rgba(0,0,255,0.5)', // Bar color
-          borderColor: 'rgba(255, 99, 132, 1)', // Border color
+          backgroundColor: '#A893F5', // Bar color
+          borderColor: '#A893F5', // Border color
           borderWidth: 1,
         },
       ],
@@ -35,8 +35,6 @@ const BarGraph = ({ labels, dataManual, dataPure, title }) => {
         scales: {
           y: {
             beginAtZero: true, // Start Y axis at 0
-          },
-          x: {
             title: {
               display: true,
               text: title,
@@ -44,6 +42,8 @@ const BarGraph = ({ labels, dataManual, dataPure, title }) => {
                 size: 21,
               },
             },
+          },
+          x: {
             ticks: {
               font: {
                 size: 16,
