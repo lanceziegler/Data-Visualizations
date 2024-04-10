@@ -12,6 +12,7 @@ import Boxplot from './components/BoxPlot';
 import Placeholder from './components/Placeholder';
 import { boxplotData } from '../DATA';
 import BarGraph from './components/BarGraph';
+import BarStacked from './components/BarStacked';
 
 export default function Home() {
   const [visibleComponent, setVisibleComponent] = useState('placeholder'); // State to track the visible component
@@ -330,6 +331,21 @@ export default function Home() {
           >
             <IconChartBar /> RNA Comparisons
           </button>
+          <button
+            onClick={() => toggleVisibility('barGraph3')}
+            onMouseDown={() => handlePress('barGraph3')} // Handle mouse down event
+            onMouseUp={handleRelease} // Handle mouse up event
+            onMouseLeave={handleRelease} // Handle mouse leave event
+            onTouchStart={() => handlePress('barGraph3')} // Handle touch start event
+            onTouchEnd={handleRelease} // Handle touch end event
+            className={`flex gap-4 transform transition-all hover:scale-105 hover:text-red-700 ${
+              pressedButton === 'barGraph3'
+                ? 'scale-95 text-red-600'
+                : 'scale-100'
+            }`}
+          >
+            <IconChartBar /> PGM vs GNXS
+          </button>
         </section>
 
         <section className={`md:col-span-9 p-20 col-span-6`}>
@@ -352,6 +368,7 @@ export default function Home() {
               title={'RNA Yield (ng/uL)'}
             />
           )}
+          {visibleComponent === 'barGraph3' && <BarStacked />}
           {visibleComponent === 'boxPlot' && (
             <Boxplot
               label={label[0]}
