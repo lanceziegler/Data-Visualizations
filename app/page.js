@@ -4,6 +4,7 @@ import {
   IconChartLine,
   IconChartCandle,
   IconChartBar,
+  IconChartDonut3,
 } from '@tabler/icons-react';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -13,6 +14,7 @@ import Placeholder from './components/Placeholder';
 import { boxplotData } from '../DATA';
 import BarGraph from './components/BarGraph';
 import BarStacked from './components/BarStacked';
+import Donut from './components/Donut';
 
 export default function Home() {
   const [visibleComponent, setVisibleComponent] = useState('placeholder'); // State to track the visible component
@@ -349,6 +351,32 @@ export default function Home() {
           >
             <IconChartBar /> PGM vs GNXS
           </button>
+          <button
+            onClick={() => toggleVisibility('donut1')}
+            onMouseDown={() => handlePress('donut1')} // Handle mouse down event
+            onMouseUp={handleRelease} // Handle mouse up event
+            onMouseLeave={handleRelease} // Handle mouse leave event
+            onTouchStart={() => handlePress('donut1')} // Handle touch start event
+            onTouchEnd={handleRelease} // Handle touch end event
+            className={`flex gap-4 transform transition-all hover:scale-105 hover:text-red-700 ${
+              pressedButton === 'donut1' ? 'scale-95 text-red-600' : 'scale-100'
+            }`}
+          >
+            <IconChartDonut3 /> Manual Pipetting Steps
+          </button>
+          <button
+            onClick={() => toggleVisibility('donut2')}
+            onMouseDown={() => handlePress('donut2')} // Handle mouse down event
+            onMouseUp={handleRelease} // Handle mouse up event
+            onMouseLeave={handleRelease} // Handle mouse leave event
+            onTouchStart={() => handlePress('donut2')} // Handle touch start event
+            onTouchEnd={handleRelease} // Handle touch end event
+            className={`flex gap-4 transform transition-all hover:scale-105 hover:text-red-700 ${
+              pressedButton === 'donut2' ? 'scale-95 text-red-600' : 'scale-100'
+            }`}
+          >
+            <IconChartDonut3 /> Hands-on Time (Hours)
+          </button>
         </section>
 
         <section className={`md:col-span-9 p-20 col-span-6`}>
@@ -482,6 +510,12 @@ export default function Home() {
               boxLabelB={boxLabelB[1]}
               min={0.9}
             />
+          )}
+          {visibleComponent === 'donut1' && (
+            <Donut title={'Manual Pipetting Steps'} data={[749, 80]}/>
+          )}
+          {visibleComponent === 'donut2' && (
+            <Donut title={'Hands-on Time (Hours)'} data={[10.7, 2.9]}/>
           )}
         </section>
       </div>
