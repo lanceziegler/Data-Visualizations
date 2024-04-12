@@ -3,9 +3,19 @@
 import React, { useEffect, useRef } from 'react';
 import { BoxPlotChart } from '@sgratzl/chartjs-chart-boxplot';
 
-const BoxPlot = ({ label, labelX, data1, data2, min, max, boxLabelA, boxLabelB }) => {
+const BoxPlot = ({
+  label,
+  labelX,
+  data1,
+  data2,
+  min,
+  max,
+  boxLabelA,
+  boxLabelB,
+}) => {
   const canvasRef = useRef(null);
   const chartInstanceRef = useRef(null);
+
   const boxplotData = {
     // define label tree
     labels: [labelX],

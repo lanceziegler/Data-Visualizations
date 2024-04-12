@@ -7,8 +7,6 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 const Donut = ({ data, title }) => {
   const chartRef = useRef(); // Reference to canvas element
 
-  Chart.register(ChartDataLabels);
-
   useEffect(() => {
     // Data for the chart
     const chartData = {
@@ -17,7 +15,7 @@ const Donut = ({ data, title }) => {
         {
           label: 'Data: ',
           data: data,
-          backgroundColor: ['#A893F5', '#526875'],
+          backgroundColor: ['#526875', '#A893F5'],
           hoverOffset: 4, // Spacing when hovering over segments
         },
       ],
@@ -66,26 +64,27 @@ const Donut = ({ data, title }) => {
         aspectRatio: 1, // Adjust the aspect ratio to make it a perfect circle
         layout: {
           padding: {
-            top: 200,
-            bottom: 320,
-            left: 320,
-            right: 320,
+            // top: 200,
+            // bottom: 320,
+            // left: 320,
+            // right: 320,
           },
         },
         aspectRatio: 1, // Adjust the aspect ratio to make it a perfect circle
       },
     };
-
+    Chart.register(ChartDataLabels);
     // Create chart instance
     const myChart = new Chart(chartRef.current, config);
 
     // Clean up function
     return () => {
+      Chart.unregister(ChartDataLabels);
       myChart.destroy(); // Destroy chart instance to prevent memory leaks
     };
   }, [data, title]); // Depend on data and title for changes
 
-  return <canvas ref={chartRef} />; // Render canvas element
+  return <canvas ref={chartRef} style={{ maxWidth: 650, maxHeight: 650 }} />; // Render canvas element
 };
 
 export default Donut;

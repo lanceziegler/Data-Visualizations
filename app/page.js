@@ -39,6 +39,7 @@ export default function Home() {
     'ERBB2 SNV',
     'DNA Samples',
     'RNA Samples',
+    'INSERT X AXIS HEREEE',
   ];
 
   const boxLabelA = ['PGM', 'Manual Extracts'];
@@ -55,6 +56,7 @@ export default function Home() {
     ['Gene Coverage'],
     ['A260/A280 Ratio'],
     ['A260/A280 Ratio'],
+    ['Total Mapped Reads'],
   ];
 
   const data1 = [
@@ -79,6 +81,10 @@ export default function Home() {
     [1993, 1991, 1990, 1696, 1995, 1992],
     [1.18, 1.23, 1.17, 1.39, 1.14, 1.65],
     [0.96, 1.02, 1.11, 1.17, 0.97, 1.51],
+    [
+      15549, 11019, 9772, 20802, 22476, 2505, 11797, 16895, 15346, 13180, 2311,
+      492,
+    ],
   ];
 
   const data2 = [
@@ -103,6 +109,10 @@ export default function Home() {
     [2707, 2323, 3279, 2209, 4572, 3340],
     [1.23, 1.17, 1.26, 1.09, 1.19, 1.16],
     [1.18, 1.23, 1.17, 1.39, 1.14, 1.65],
+    [
+      7070, 3689, 61848, 17879, 136942, 48174, 5012, 6724, 106487, 22490,
+      122846, 44774,
+    ],
   ];
 
   useEffect(() => {
@@ -305,6 +315,21 @@ export default function Home() {
             }`}
           >
             <IconChartCandle /> {labelX[9]}
+          </button>
+          <button
+            onClick={() => toggleVisibility('boxPlot11')}
+            onMouseDown={() => handlePress('boxPlot11')} // Handle mouse down event
+            onMouseUp={handleRelease} // Handle mouse up event
+            onMouseLeave={handleRelease} // Handle mouse leave event
+            onTouchStart={() => handlePress('boxPlot11')} // Handle touch start event
+            onTouchEnd={handleRelease} // Handle touch end event
+            className={`flex gap-4 transform transition-all hover:scale-105 hover:text-red-700 ${
+              pressedButton === 'boxPlot11'
+                ? 'scale-95 text-red-600'
+                : 'scale-100'
+            }`}
+          >
+            <IconChartCandle /> {labelX[10]}
           </button>
           <button
             onClick={() => toggleVisibility('barGraph1')}
@@ -511,11 +536,21 @@ export default function Home() {
               min={0.9}
             />
           )}
+          {visibleComponent === 'boxPlot11' && (
+            <Boxplot
+              label={label[10]}
+              labelX={labelX[10]}
+              data1={data1[10]}
+              data2={data2[10]}
+              boxLabelA={boxLabelA[0]}
+              boxLabelB={boxLabelB[0]}
+            />
+          )}
           {visibleComponent === 'donut1' && (
-            <Donut title={'Manual Pipetting Steps'} data={[749, 80]}/>
+            <Donut title={'Manual Pipetting Steps'} data={[749, 80]} />
           )}
           {visibleComponent === 'donut2' && (
-            <Donut title={'Hands-on Time (Hours)'} data={[10.7, 2.9]}/>
+            <Donut title={'Hands-on Time (Hours)'} data={[10.7, 2.9]} />
           )}
         </section>
       </div>
