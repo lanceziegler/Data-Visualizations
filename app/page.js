@@ -39,7 +39,7 @@ export default function Home() {
     'ERBB2 SNV',
     'DNA Samples',
     'RNA Samples',
-    'INSERT X AXIS HEREEE',
+    '',
   ];
 
   const boxLabelA = ['PGM', 'Manual Extracts'];
