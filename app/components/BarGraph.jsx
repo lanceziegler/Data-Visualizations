@@ -18,7 +18,7 @@ const BarGraph = ({ labels, dataManual, dataPure, title }) => {
           borderWidth: 1,
         },
         {
-          label: 'Purification System',
+          label: 'Automated Purification System',
           data: dataPure, // Sample data values
           backgroundColor: '#A893F5', // Bar color
           borderColor: '#A893F5', // Border color
